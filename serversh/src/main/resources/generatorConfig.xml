@@ -7,10 +7,12 @@
     <classPathEntry location="C:\Users\sn\.m2\repository\mysql\mysql-connector-java\8.0.15\mysql-connector-java-8.0.15.jar" />
 
     <context id="DB2Tables" targetRuntime="MyBatis3">
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
                         connectionURL="jdbc:mysql://localhost:3306/sh?characterEncoding=utf-8&amp;serverTimezone=UTC&amp;useSSL=false"
                         userId="root"
                         password="root">
+                 <!--数据库MySQL 8.0version不生成其他多余的类-->
+            <property name="nullCatalogMeansCurrent" value="true"></property>
         </jdbcConnection>
 
         <javaTypeResolver >
